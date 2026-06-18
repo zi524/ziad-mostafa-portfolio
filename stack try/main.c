@@ -1,0 +1,47 @@
+#include"stack.h"
+stack_stuct stack1;
+int main()
+{   int ret;
+    ret=stack_intialize(&stack1);
+    printf("\n");
+    ret=stack_push(&stack1,11);
+    printf("\n");
+    ret=stack_push(&stack1,22);
+    printf("\n");
+    ret=stack_push(&stack1,33);
+    printf("\n");
+    ret=stack_push(&stack1,44);
+    printf("\n");
+    ret=stack_push(&stack1,55);
+    printf("\n");
+    ret=stack_push(&stack1,66);
+    printf("\n");
+    ret=stack_push(&stack1,77);
+    printf("\n");
+    ret=stack_push(&stack1,88);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);
+    printf("\n");
+    ret=stack_pop(&stack1);   
+    return 0;
+}
