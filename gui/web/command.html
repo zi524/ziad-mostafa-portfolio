@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="command.css">
+    <script src="roslib.min.js"></script>
+</head>
+<body>  
+    <div class="debugger-container">
+        <!-- Mode Switch -->
+        <div class="mode-switch">
+            <button id="system-mode" class="mode-btn active">
+                System Mode
+            </button>
+            <button id="node-mode" class="mode-btn">
+                Node Mode
+            </button>
+        </div>
+        <textarea id="response-output" class="terminal-textarea" readonly></textarea>
+    </div>
+    <div class="bottons-bar">
+        <button id = "debug-button" class="DEBUG">
+            Debug
+        </button>
+        <button id ="test-button" class="TEST">
+           Test
+        </button>
+        <button id = "kill-button" class="KILL">
+            KILL
+        </button>
+    </div>
+    <div class="icon-bar">
+        <button id="debug_web" class="debug_web" onclick="window.location.href='index.html'">
+            <img src="driver-svgrepo-com.svg" alt="Plug Icon" width="60" height="60">
+        </button>
+        <button id="debug_web" class="debug_web"  onclick="window.location.href=' config.html'">
+            <!--<svg xmlns="http://www.w3.org/2000/svg" width="58" height="60" fill="currentColor" class="bi bi-sign-stop" viewBox="0 0 16 16">
+                <path d="M3.16 10.08c-.931 0-1.447-.493-1.494-1.132h.653c.065.346.396.583.891.583.524 0 .83-.246.83-.62 0-.303-.203-.467-.637-.572l-.656-.164c-.61-.147-.978-.51-.978-1.078 0-.706.597-1.184 1.444-1.184.853 0 1.386.475 1.436 1.087h-.645c-.064-.32-.352-.542-.797-.542-.472 0-.77.246-.77.6 0 .261.196.437.553.522l.654.161c.673.164 1.06.487 1.06 1.11 0 .736-.574 1.228-1.544 1.228Zm3.427-3.51V10h-.665V6.57H4.753V6h3.006v.568H6.587Z"/>
+                <path fill-rule="evenodd" d="M11.045 7.73v.544c0 1.131-.636 1.805-1.661 1.805-1.026 0-1.664-.674-1.664-1.805V7.73c0-1.136.638-1.807 1.664-1.807s1.66.674 1.66 1.807Zm-.674.547v-.553c0-.827-.422-1.234-.987-1.234-.572 0-.99.407-.99 1.234v.553c0 .83.418 1.237.99 1.237.565 0 .987-.408.987-1.237m1.15-2.276h1.535c.82 0 1.316.55 1.316 1.292 0 .747-.501 1.289-1.321 1.289h-.865V10h-.665zm1.436 2.036c.463 0 .735-.272.735-.744s-.272-.741-.735-.741h-.774v1.485z"/>
+                <path fill-rule="evenodd" d="M4.893 0a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146A.5.5 0 0 0 11.107 0zM1 5.1 5.1 1h5.8L15 5.1v5.8L10.9 15H5.1L1 10.9z"/>
+              </svg>-->
+              <img src="settings-svgrepo-com.svg" alt="Plug Icon" width="60" height="60">
+        </button>
+        <button id="debug_web" class="debug_web" onclick="window.location.href='command.html'">
+            <!--<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-plug-fill" viewBox="0 0 16 16">
+                <path d="M6 0a.5.5 0 0 1 .5.5V3h3V.5a.5.5 0 0 1 1 0V3h1a.5.5 0 0 1 .5.5v3A3.5 3.5 0 0 1 8.5 10c-.002.434-.01.845-.04 1.22-.041.514-.126 1.003-.317 1.424a2.08 2.08 0 0 1-.97 1.028C6.725 13.9 6.169 14 5.5 14c-.998 0-1.61.33-1.974.718A1.92 1.92 0 0 0 3 16H2c0-.616.232-1.367.797-1.968C3.374 13.42 4.261 13 5.5 13c.581 0 .962-.088 1.218-.219.241-.123.4-.3.514-.55.121-.266.193-.621.23-1.09.027-.34.035-.718.037-1.141A3.5 3.5 0 0 1 4 6.5v-3a.5.5 0 0 1 .5-.5h1V.5A.5.5 0 0 1 6 0"/>
+              </svg>-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-bug-fill" viewBox="0 0 16 16">
+                <path d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z"/>
+                <path d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975"/>
+              </svg>
+        </button>   
+    </div>
+    <div id="additional-buttons" style="display: none;">
+        <!-- Container for 'test' buttons -->
+        <div id="test-buttons" class="action-buttons" style="display: none;">
+            <p>Motion testing</p>
+            <button class="test-btn component-btn motion-btn">x_planeright</button>
+            <button class="test-btn component-btn motion-btn">x_planeleft</button>
+            <button class="test-btn component-btn motion-btn">y_planeforward</button>
+            <button class="test-btn component-btn motion-btn">y_planebackward</button>
+            <button class="test-btn component-btn motion-btn">yaw_positive</button>
+            <button class="test-btn component-btn motion-btn">yaw_negative</button>
+            <button class="test-btn component-btn motion-btn">z_planeup</button>
+            <button class="test-btn component-btn motion-btn">z_planedown</button>
+            <button class="test-btn component-btn motion-btn">pitch_positive</button>
+            <button class="test-btn component-btn motion-btn">pitch_negative</button>
+            <p>Components testing</p>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_1</button>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_2</button>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_3</button>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_4</button>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_5</button>
+            <button class="test-btn component-btn motion-btn" id="motor">bldc_6</button>
+            <button class="test-btn component-btn motion-btn" id="motor">dc_1</button>
+            <button class="test-btn component-btn motion-btn" id="motor">gripper_1</button>
+            <button class="test-btn component-btn motion-btn" id="motor">gripper_2</button>
+            <!-- <button class="test-btn component-btn motion-btn" id="motor">dc_3</button>
+            <button class="test-btn component-btn motion-btn" id="motor">dc_4</button> -->
+            <button class="test-btn component-btn motion-btn" id="motor">servo_1</button>
+            <button class="test-btn component-btn motion-btn" id="mpu">mpu</button>
+            <button class="test-btn component-btn motion-btn" id="cameras">cameras</button>
+        </div>
+    
+        <div id="debug-buttons" class="action-buttons" style="display: none;">
+            <button class = "component-btn debug-btn" id="motor">bldc_1</button>
+            <button class = "component-btn debug-btn" id="motor">bldc_2</button>
+            <button class = "component-btn debug-btn" id="motor">bldc_3</button>
+            <button class = "component-btn debug-btn" id="motor">bldc_4</button>
+            <button class = "component-btn debug-btn" id="motor">bldc_5</button>
+            <button class = "component-btn debug-btn" id="motor">bldc_6</button>
+            <button class = "component-btn debug-btn" id="motor">dc_1</button>
+            <button class = "component-btn debug-btn" id="motor">dc_2</button>
+            <!-- <button class = "component-btn debug-btn" id="motor">dc_3</button>
+            <button class = "component-btn debug-btn" id="motor">dc_4</button> -->
+            <button class = "component-btn debug-btn" id="motor">servo_1</button>
+            <button class = "component-btn debug-btn" id="mpu">mpu</button>
+            <button class = "component-btn debug-btn" id="cameras">cameras</button>
+        </div>
+        <div id="kill-buttons" class="action-buttons" style="display: none;">
+            <button class = "component-btn kill-btn" id="motor">bldc_1</button>
+            <button class = "component-btn kill-btn" id="motor">bldc_2</button>
+            <button class = "component-btn kill-btn" id="motor">bldc_3</button>
+            <button class = "component-btn kill-btn" id="motor">bldc_4</button>
+            <button class = "component-btn kill-btn" id="motor">bldc_5</button>
+            <button class = "component-btn kill-btn" id="motor">bldc_6</button>
+            <button class = "component-btn kill-btn" id="motor">dc_1</button>
+            <button class = "component-btn kill-btn" id="motor">dc_2</button>
+            <button class = "component-btn debug-btn"id="motor">dc_3</button>
+            <button class = "component-btn debug-btn"id="motor">dc_4</button>
+            <button class = "component-btn kill-btn" id="motor">servo_1</button>
+            <button class = "component-btn kill-btn" id="mpu">mpu</button>
+            <button class = "component-btn kill-btn" id="cameras">cameras</button>
+            <button class = "component-btn kill-btn" id="System">System</button>
+        </div>
+    
+        <!-- Publish and Close Buttons -->
+        <!--<button id="publish-button">Publish</button>
+        <button id="close-btn">Close</button>-->
+    </div>
+
+    <!--<script src="script.js"></script>-->
+    <!--<script src="control.js"></script>-->
+    <script src="command.js"></script>
+
+</body>
+</html>

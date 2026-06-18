@@ -1,0 +1,17 @@
+float64 axis1
+float64 axis2
+float64 axis3
+float64 axis4
+float64 axis5
+bool button1
+bool button2
+bool button3
+bool button4
+bool button5
+bool button6
+bool button7
+bool button8
+bool button9
+bool button10
+bool button11
+bool button12

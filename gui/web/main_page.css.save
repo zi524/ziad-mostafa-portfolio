@@ -1,0 +1,331 @@
+:root {
+    --Gray100: #d6d6d6;
+    --Gray200: #bfbfbf;
+    --Gray300: #a8a8a8;
+    --Gray400: #919191;
+    --Gray500: #7c7c7c;
+    --Gray600: #666666;
+    --Gray700: #525252;
+    --Gray800: #3f3f3f;
+    --Gray900: #2c2c2c;
+    --yellow100: #dddd00;
+    --yellow200: #c5c500;
+    --yellow300: #aeae00;
+    --yellow400: #969600;
+    --yellow500: #818100;
+    --yellow600: #696900;
+    --yellow700: #555500;
+    --yellow800: #414100;
+    --yellow900: #2d2d00;
+    --orange100: #ffcf77;
+    --orange200: #ffaf1d;
+    --orange400: #e89600;
+    --orange400: #c88200;
+    --orange400: #ac6f00;
+    --orange600: #8d5b00;
+    --orange700: #724900;
+    --orange800: #573900;
+    --orange900: #3d2800;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: var(--Gray900);
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle{
+    width: 100%;
+    height: 83%;
+    display: flex;    
+    border-radius: 15px;
+    background-color: var(--Gray800);
+    border: 2px solid #000;  
+    margin: auto;  
+}
+
+.image-container{
+    width: 100%;
+    height: 30%;
+    align-items: center;
+}
+
+.options{
+    width: 25%;
+    height: 100%;      
+    border-radius: 80px;
+    background-color: var(--Gray500);
+    border: 2px solid #000;  
+}
+
+.image{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 15%;
+}
+
+.pitch-container{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.step-container,.rectangle_pitch,
+.rectangle_servo1, .rectangle_servo2{
+    width: 32%;
+    height: 69%;
+    border-radius: 15px;
+    background-color: var(--orange400);
+    border: 2px solid #000;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.stepn, .stepn_number,
+.pitch,.pitch_number,
+.servo1,.servo1_number,
+.servo2,.servo2_number{
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 50%; 
+}
+
+/* Style the p elements to fit their parent div */
+.stepn p, .stepn_number p,
+.pitch p, .pitch_number p,
+.servo1 p, .servo1_number p,
+.servo2 p, .servo2_number p
+{
+    margin: 0; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold;
+}
+
+.servo-container{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.pid-joy-pin,.magic-wifi-rocket{
+    width: 100%;
+    display: flex;
+    margin: 8% 0;
+}
+
+.toggle-button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    border-radius: 25px;
+    font-size: 31px;
+    color: black;
+    cursor: pointer;
+    margin: auto;
+    transition: background-color 0.3s ease;
+}
+
+
+.cameras {
+    width: 77%;
+    height: 100%;    
+    border-radius: 20px;
+    background-color: var(--Gray800); 
+    border: 2px solid #000;    
+    margin-left: 20px;  
+    align-content: space-around;     
+}
+
+.camera1 {
+    width: 100%;
+    height: 47%; 
+    border-radius: 80px;
+    background-color: var(--Gray500);
+    border: 2px solid #000;   
+    margin-left: initial;        
+}
+
+.camera2 {
+    width: 50%;
+    height: 100%;
+    border-radius: 80px;
+    background-color: var(--Gray500); 
+    border: 2px solid #000;
+}
+
+.camera3 {
+    width: 50%;
+    height: 100%;    
+    border-radius: 80px;
+    background-color: var(--Gray500); 
+    border: 2px solid #000;    
+    margin-left: auto;      
+}
+
+.horizontal-container {
+    display: flex;   
+    height: 50%;
+}
+
+.footer{
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content : space-between;
+}
+.bar{
+    display: flex;
+    width: 31%;
+    height: 78%;
+    border-radius: 80px;
+    background-color: var(--Gray500);
+    border: 2px solid #000;
+    margin: auto;
+    
+}
+
+.debug_web{
+    width: 20%;
+    height: 80%;
+    border: none; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    background-color: var(--orange400);
+    margin: auto;
+}
+
+.scroll-container {
+    display: flex;
+    width: 59%;
+    overflow: hidden;
+    background-color: var(--Gray500);
+    border: 2px solid #000;
+    position: relative;
+    left: -2%;
+    border-radius: 34px;
+    height: 80%;
+    top: 10%;
+}
+
+.scroll-content {
+    position: relative;
+    width: 90%;
+    color: var(--orange400);
+    animation: scroll-up 10s linear infinite;
+    font-size: 30px;
+    justify-content: center;
+    left: 5%;
+}
+
+@keyframes scroll-up {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.wifi-on {
+    background-color: var(--orange400); 
+}
+
+.wifi-off {
+    background-color: #f44336; 
+}
+
+.joystick-on {
+    background-color: var(--orange400); 
+}
+
+.joystick-off {
+    background-color: #f44336; 
+}
+
+.pin-on {
+    background-color: var(--orange400); 
+}
+
+.pin-off {
+    background-color: #f44336; 
+}
+
+.magic-on {
+    background-color: var(--orange400); 
+}
+
+.magic-off {
+    background-color: #f44336; 
+}
+
+.pid-on {
+    background-color: var(--orange400); 
+}
+
+.pid-off {
+    background-color: #f44336; 
+}
+
+.rocket-on {
+    background-color: var(--orange400); 
+}
+
+.rocket-off {
+    background-color: #f44336; 
+}
+/* Optional: styling when the element is in fullscreen */
+.camera1:fullscreen {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+}
+
+.cameras {
+    display: flex;
+    flex-direction: column;
+    /height: 100vh;/
+    /gap: 10px;/ /* Optional, to add space between camera divs */
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.camera1, .camera2, .camera3 {
+    flex: 1;
+    /background-color: black;/ /* Optional, for visibility */
+    /overflow: hidden;/ /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera1 img, .camera2 img, .camera3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the whole video content fits within the div */
+    transform: rotate(180deg);
+}

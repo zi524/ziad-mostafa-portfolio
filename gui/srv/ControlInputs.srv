@@ -1,0 +1,23 @@
+int32 yaw1
+int32 yaw2
+int32 yaw3
+int32 pitch1
+int32 pitch2
+int32 pitch3
+int32 bldc1
+int32 bldc2
+int32 bldc3
+int32 bldc4
+int32 bldc5
+int32 bldc6
+int32 switchCircuit1
+int32 switchCircuit2
+int32 switchCircuit3
+int32 servoMotor
+int32 dc1
+int32 dc2
+int32 dc3
+int32 dc4
+---
+bool success
+string message

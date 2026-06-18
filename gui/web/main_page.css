@@ -1,0 +1,334 @@
+:root {
+    --original_back:#1e1e1e;
+    --original:#007AFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: var(--original_back);
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle{
+    width: 100%;
+    height: 83%;
+    display: flex;    
+    border-radius: 15px;
+    background-color: var(--original_back);
+    border: 2px solid #000;  
+    margin: auto;  
+}
+
+.image-container{
+    width: 100%;
+    height: 30%;
+    align-items: center;
+}
+
+.options{
+    width: 25%;
+    height: 100%;      
+    border-radius: 80px;
+    background-color: var(--original_back);
+    border: 2px solid #000;  
+}
+
+.image{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 15%;
+}
+
+.pitch-container{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.step-container,.rectangle_pitch,
+.rectangle_servo1, .rectangle_servo2{
+    width: 32%;
+    height: 69%;
+    border-radius: 15px;
+    background-color: var(--original);
+    border: 2px solid #000;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.stepn, .stepn_number,
+.pitch,.pitch_number,
+.servo1,.servo1_number,
+.servo2,.servo2_number{
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 50%; 
+}
+
+/* Style the p elements to fit their parent div */
+.stepn p, .stepn_number p,
+.pitch p, .pitch_number p,
+.servo1 p, .servo1_number p,
+.servo2 p, .servo2_number p
+{
+    margin: 0; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold;
+}
+
+.servo-container{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.pid-joy-pin,.magic-wifi-rocket{
+    width: 100%;
+    display: flex;
+    margin: 8% 0;
+}
+
+.toggle-button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    border-radius: 25px;
+    font-size: 31px;
+    color: black;
+    cursor: pointer;
+    margin: auto;
+    transition: background-color 0.3s ease;
+}
+
+
+.cameras {
+    width: 77%;
+    height: 100%;    
+    border-radius: 20px;
+    background-color: var(--original_back); 
+    border: 2px solid #000;    
+    margin-left: 20px;  
+    align-content: space-around;     
+}
+
+.camera1 {
+    width: 100%;
+    height: 47%; 
+    border-radius: 80px;
+    background-color: var(--original_back);
+    border: 2px solid #000;   
+    margin-left: initial;        
+}
+
+.camera2 {
+    width: 50%;
+    height: 100%;
+    border-radius: 80px;
+    background-color: var(--original_back); 
+    border: 2px solid #000;
+}
+
+.camera3 {
+    width: 50%;
+    height: 100%;    
+    border-radius: 80px;
+    background-color: var(--original_back); 
+    border: 2px solid #000;    
+    margin-left: auto;      
+}
+
+.horizontal-container {
+    display: flex;   
+    height: 50%;
+}
+
+.footer{
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content : space-between;
+}
+.bar{
+    display: flex;
+    width: 31%;
+    height: 78%;
+    border-radius: 80px;
+    background-color: var(--original_back);
+    border: 2px solid #000;
+    margin: auto;
+    
+}
+
+.debug_web{
+    width: 20%;
+    height: 80%;
+    border: none; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    background-color: var(--original);
+    margin: auto;
+}
+
+.scroll-container {
+    display: flex;
+    width: 59%;
+    overflow: hidden;
+    background-color: var(--original_back);
+    border: 2px solid #000;
+    position: relative;
+    left: -2%;
+    border-radius: 34px;
+    height: 80%;
+    top: 10%;
+}
+
+.scroll-content {
+    position: relative;
+    width: 90%;
+    color: var(--original);
+    animation: scroll-up 10s linear infinite;
+    font-size: 30px;
+    justify-content: center;
+    left: 5%;
+}
+
+@keyframes scroll-up {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.wifi-on {
+    background-color: var(--original); 
+}
+
+.wifi-off {
+    background-color: #f44336; 
+}
+
+.joystick-on {
+    background-color: var(--original); 
+}
+
+.joystick-off {
+    background-color: #f44336; 
+}
+
+.pin-on {
+    background-color: var(--original); 
+}
+
+.pin-off {
+    background-color: #f44336; 
+}
+
+.magic-on {
+    background-color: var(--original); 
+}
+
+.magic-off {
+    background-color: #f44336; 
+}
+
+.pid-on {
+    background-color: var(--original); 
+}
+
+.pid-off {
+    background-color: #f44336; 
+}
+
+.rocket-on {
+    background-color: var(--original); 
+}
+
+.rocket-off {
+    background-color: #f44336; 
+}
+/* Optional: styling when the element is in fullscreen */
+.camera1:fullscreen {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+}
+
+.cameras {
+    display: flex;
+    flex-direction: column;
+    /*height: 100vh;*/
+    /*gap: 10px;*/ /* Optional, to add space between camera divs */
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.camera1, .camera2, .camera3 {
+    flex: 1;
+    /*background-color: black;/ /* Optional, for visibility */
+    /*overflow: hidden;*/ /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera1 img, .camera2 img, .camera3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the whole video content fits within the div */
+    transform: rotate(180deg);
+}
+
+
+
+
+
+/* .scroll-container {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation: scrollUp 5s linear infinite;
+} */
+
+@keyframes scrollUp {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+

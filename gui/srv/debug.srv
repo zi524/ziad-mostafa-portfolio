@@ -1,0 +1,6 @@
+# debug.srv
+string command_type
+string component
+---
+bool success
+string information

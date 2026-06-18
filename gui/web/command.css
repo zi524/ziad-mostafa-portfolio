@@ -1,0 +1,388 @@
+:root {
+    --Gray100: #d6d6d6;
+    --Gray200: #bfbfbf;
+    --Gray300: #a8a8a8;
+    --Gray400: #919191;
+    --Gray500: #7c7c7c;
+    --Gray600: #666666;
+    --Gray700: #525252;
+    --Gray800: #3f3f3f;
+    --Gray900: #2c2c2c;
+    --yellow100: #dddd00;
+    --yellow200: #c5c500;
+    --yellow300: #aeae00;
+    --yellow400: #969600;
+    --yellow500: #818100;
+    --yellow600: #696900;
+    --yellow700: #555500;
+    --yellow800: #414100;
+    --yellow900: #2d2d00;
+    --orange100: #ffcf77;
+    --orange200: #ffaf1d;
+    --orange300: #e89600;
+    --orange400: #c88200;
+    --orange500: #ac6f00;
+    --orange600: #8d5b00;
+    --orange700: #724900;
+    --orange800: #573900;
+    --orange900: #3d2800;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color:var(--Gray800);
+    width: 100%;
+    height: 100%;
+
+}
+/* Container for the entire debugger */
+.debugger-container {
+    width: 73%;
+    height: 80%;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    left: 27%;
+}
+
+/* Mode Switch Buttons */
+.mode-switch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.mode-btn {
+    background-color: var(--Gray600);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.mode-btn.active {
+    background-color: var(--orange500);
+    color: #343434;
+}
+
+/* Terminal-like Textarea */
+.terminal-textarea {
+    background-color:var(--Gray600);
+    color: var(--yellow200);
+    padding: 15px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    font-size: 14px;
+    white-space: pre-wrap; /* Preserve white space and wrap long lines */
+}
+
+/*---------------------------------------------------*/
+
+/* Bottom bar container */
+.icon-bar {
+    position: relative;
+    width: 30%;
+    background-color: var(--Gray600);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    left: 31%;
+    height: 11%;
+    top: -5%;
+}
+
+/* Buttons in the bottom bar */
+.debug_web{
+    cursor : pointer;
+    background-color: var(--orange500);
+    overflow: hidden;
+}
+
+/* Ensure the body content does not overlap with the bottom bar */
+body {
+    margin-bottom: 60px; /* Adjust this based on the height of the bottom bar */
+}
+
+/*----------------------------------------*/
+
+.bottons-bar {
+    width: 29%;
+    height: 11%;
+    background-color: var(--Gray600);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-left: 25%;
+    position: relative;
+    left: 43%;
+    top: 6%;
+}
+
+.KILL,.DEBUG,.TEST{
+    background-color:var(--orange500);
+}
+.KILL,
+.DEBUG,
+.TEST{
+    width: 20%;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.component-btn{
+    display: none;
+}
+
+#additional-buttons {
+    background-color:var(--Gray600);
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 10px;
+    width: 26%;
+    position: relative;
+    top: -100%;
+    left: 1%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 97%;
+}
+
+/* Hide the panel initially */
+#additional-buttons {
+    display: none;
+}
+
+/* Style for the buttons inside the additional buttons panel */
+.action-buttons button {
+    display: block; 
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--orange500);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action-buttons p{
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3%;
+    background-color: var(--Gray200);
+    color: black;
+}
+
+.action-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-evenly ;
+    justify-content: space-between;
+}
+
+.test-btn{
+    width: 47% !important;
+}
+
+.action-buttons button:hover {
+    background-color: var(--orange600);
+}
+
+.foot-add-bar{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+/* Style for the Publish and Close buttons */
+#publish-button, #close-btn {
+    padding: 10px 20px;
+    margin: 10px 5px 0 5px;
+    background-color: var(--orange500);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 48%;
+}
+
+#publish-button:hover, #close-btn:hover {
+    background-color:var(--orange600);
+}
+
+/* Optional: Style the panel when it's shown */
+#additional-buttons.active {
+    display: block;
+}
+/*.additional-buttons{
+    width: 27%;
+    height: 95%;
+    left: 1%;
+    background-color: #343434;
+    top: -100%;
+    position: relative;
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: -5%;
+    right: 2%;
+    background: none;
+    border: none;
+    font-size: 78px;
+    cursor: pointer;
+    color: #007AFF;
+}
+
+.publish-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007AFF;
+    color: black;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 82%;
+    left: 28%;
+    border-radius: 21px;
+    width: 46%;
+    height: 8%;
+}*/
+
+
+/*.motor-button1{
+    top: 4%;
+    left: 4%;
+}
+
+
+.motor-button2{
+    top: 4%;
+    left: 53%;
+}
+
+
+.motor-button3{
+    top: 14%;
+    left: 4%;
+}
+
+
+.motor-button4{
+    top: 14%;
+    left: 53%;
+}
+
+.motor-button5{
+    top: 24%;
+    left: 4%;
+}
+
+.motor-button6{
+    top: 24%;
+    left: 53%;
+}
+
+.cameras-button{
+    top: 34%;
+    left: 4%;
+}
+
+.mpu-button{
+    top: 34%;
+    left: 53%;
+}
+
+.DC-1{
+    top: 44%;
+    left: 4%;
+}
+
+.DC-2{
+    top: 44%;
+    left: 53%;
+}
+
+.servo{
+    top: 54%;
+    left: 4%;
+}*/
+
+/* Style for the main buttons (Debug, Test, Kill) */
+/*.main-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.main-btn:hover {
+    background-color: #0056b3;
+}*/
+
+/* Style for the additional buttons panel */
+
+
+/* Style for the mode switching buttons */
+/*
+.mode-btn {
+    padding: 8px 15px;
+    margin: 5px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.mode-btn.active {
+    background-color: #343a40;
+}
+
+.mode-btn:hover {
+    background-color: #5a6268;
+}
+*/
+/* Textarea for displaying terminal output */
+/*
+#response-output {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    background-color: #f8f9fa;
+    color: #333;
+    margin-top: 10px;
+    resize: none;
+}
+*/
