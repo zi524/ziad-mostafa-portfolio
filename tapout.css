@@ -1,8 +1,0 @@
-    .box {
-    height: 200px;        /* tall enough */
-    width: 200px;         /* same as height for square */
-    display: flex;        /* allows centering */
-    align-items: center;  /* vertical centering */
-    justify-content: center; /* horizontal centering */
-    font-size: 22px;      /* bigger text */
-}
