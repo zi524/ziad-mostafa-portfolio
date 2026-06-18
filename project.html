@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link    
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >    
+<script src="login.js"></script>
+<script src="project.js"></script>
+<style>
+    .box {
+    height: 200px;        /* tall enough */
+    width: 200px;         /* same as height for square */
+    display: flex;        /* allows centering */
+    align-items: center;  /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    font-size: 22px;      /* bigger text */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+    <div class="col bg-danger text-white box">
+     <h1> Tapout</h1>
+    </div>
+    <div class="col bg-danger text-white box">
+     <h1>Registerision</h1> 
+    </div>
+    </div>
+  </div>
+<h1 style="display: inline; margin-left:10%;">Hello</h1>
+<h1 id="name"style="display: inline; margin-left:3% "></h1> 
+<form>
+<div style="margin-left:40%"><h5>Facebook link</h5><input id="face" type="url" ></div>
+<div style="margin-left:40%"><h5>LinkedIn link</h5><input id="linked" type="url"></div>
+<div style="margin-left:40%">
+<input type="checkbox" id="PCB" name="PCB" value="PCB">
+<label for="PCB">PCB Course</label><br>
+
+<input type="checkbox" id="AI" name="AI" value="AI" checked>
+<label for="AI">AI Course</label><br>
+
+<input type="checkbox" id="Embedded" name="Embedded" value="Embedded">
+<label for="Embedded">Embedded Systems Course</label>
+</div>
+<div>
+    <button type="button" id="submit" style=" background-color: red;margin-left:70%; width: 120px;height: 60px; color:white;font-size:25px;"><h3>Submit</h3></button>
+</div>
+</form>
+</body>
+</html>
